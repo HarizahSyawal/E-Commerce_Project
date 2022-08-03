@@ -86,4 +86,24 @@ class UserController extends Controller
             ], 'Authentication Failed', 500);
         }
     }
+
+    public function fetch(Request $request)
+    {
+       return ResponseFormatter::success($request->user(), 'Profile Data Success Added');
+    }
+
+    public function updateProfile(Request $request){
+        $data = $request->all();
+
+        $user = Auth::user();
+        $user->update($data);
+
+        return ResponseFormatter::success($user, 'Profile Updated');
+    }
+
+    public function logout(Request $request)
+    {
+       $token = $request->user()->currentAccessToken()->delete();
+       return ResponseFormatter::success($token, 'Token Revoked');
+    }
 }
