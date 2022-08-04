@@ -270,13 +270,13 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Already have an account ?',
+              'Already have an account?',
               style: subtitleTextStyle.copyWith(
                 fontSize: 12,
               ),
             ),
-            TextButton(
-              onPressed: () => Navigator.pushNamed(context, '/sign-in'),
+            GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/sign-in'),
               child: Text(
                 'Sign In',
                 style: purpleTextStyle.copyWith(

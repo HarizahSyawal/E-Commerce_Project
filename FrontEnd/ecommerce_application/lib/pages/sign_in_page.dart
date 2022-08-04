@@ -140,12 +140,7 @@ class SignInPage extends StatelessWidget {
               height: 50,
               child: FlatButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => CoursePage(),
-                  //   ),
-                  // );
+                  Navigator.pushNamed(context, '/main');
                 },
                 color: primaryColor,
                 shape: RoundedRectangleBorder(
@@ -177,8 +172,8 @@ class SignInPage extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            TextButton(
-              onPressed: () => Navigator.pushNamed(context, '/sign-up'),
+            GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/sign-up'),
               child: Text(
                 'Sign Up',
                 style: purpleTextStyle.copyWith(
