@@ -1,7 +1,7 @@
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 
-class WishlistPage extends StatelessWidget {
+class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -9,14 +9,13 @@ class WishlistPage extends StatelessWidget {
         backgroundColor: backgroundColor1,
         centerTitle: true,
         title: Text(
-          'Favorite Shoes',
+          'Your Cart',
           style: primaryTextStyle.copyWith(
             fontSize: 18,
             fontWeight: medium,
           ),
         ),
         elevation: 0,
-        automaticallyImplyLeading: false,
       );
     }
 
@@ -46,14 +45,14 @@ class WishlistPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/icon_wishlist.png',
+                'assets/icon_cart.png',
                 width: 80,
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
-                'You don\'t have dream shoes?',
+                '',
                 style: primaryTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: medium,
@@ -63,7 +62,7 @@ class WishlistPage extends StatelessWidget {
                 height: 12,
               ),
               Text(
-                'Let\'s find your favorite shoes ',
+                '',
                 style: secondaryTextStyle,
               ),
               SizedBox(
@@ -84,7 +83,7 @@ class WishlistPage extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'Explore Store',
+                    '',
                     style: primaryTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: medium,

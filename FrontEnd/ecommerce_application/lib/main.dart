@@ -1,3 +1,5 @@
+import 'package:ecommerce_application/pages/home/cart_page.dart';
+import 'package:ecommerce_application/pages/detail_chat_page.dart';
 import 'package:ecommerce_application/pages/home/main_page.dart';
 
 import 'pages/home/chat_page.dart';
@@ -24,8 +26,9 @@ class MyApp extends StatelessWidget {
         '/main': (context) => MainPage(),
         '/profile': (context) => ProfilePage(),
         '/wishlist': (context) => WishlistPage(),
-        '/chat': (context) => ChatPage(),
+        '/detail-chat': (context) => DetailChatPage(),
         '/home': (context) => HomePage(),
+        '/cart': (context) => CartPage(),
       },
     );
   }
