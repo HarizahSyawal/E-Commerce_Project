@@ -45,10 +45,15 @@ class HomePage extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () => {},
-                  child: Image.asset(
-                    'assets/icon_profile_navbar.png',
-                    width: 54,
-                    height: 54,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/profile');
+                    },
+                    child: Image.asset(
+                      'assets/icon_profile_navbar.png',
+                      width: 54,
+                      height: 54,
+                    ),
                   ),
                 ),
               ],

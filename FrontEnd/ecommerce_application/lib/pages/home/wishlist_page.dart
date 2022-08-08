@@ -1,3 +1,4 @@
+import 'package:ecommerce_application/pages/widgets/wishlist_card.dart';
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -20,22 +21,23 @@ class WishlistPage extends StatelessWidget {
       );
     }
 
-    // Widget content() {
-    //   return Expanded(
-    //     child: Container(
-    //       color: backgroundColor3,
-    //       width: double.infinity,
-    //       child: ListView(
-    //         padding: EdgeInsets.symmetric(
-    //           horizontal: defaultMargin,
-    //         ),
-    //         children: [
-    //           ChatTile(),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // }
+    Widget content() {
+      return Expanded(
+        child: Container(
+          color: backgroundColor3,
+          child: ListView(
+            padding: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+            children: [
+              WishlistCard(),
+              WishlistCard(),
+              WishlistCard(),
+            ],
+          ),
+        ),
+      );
+    }
 
     Widget emptyWishList() {
       return Expanded(
@@ -101,8 +103,8 @@ class WishlistPage extends StatelessWidget {
     return Column(
       children: [
         header(),
-        emptyWishList(),
-        //content(),
+        //emptyWishList(),
+        content(),
       ],
     );
   }
