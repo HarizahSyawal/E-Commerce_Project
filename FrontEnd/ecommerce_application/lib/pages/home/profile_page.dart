@@ -150,9 +150,17 @@ class ProfilePage extends StatelessWidget {
       );
     }
 
-    return Column(children: [
-      header(),
-      content(),
-    ]);
+    return Scaffold(
+      backgroundColor: backgroundColor3,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(120),
+        child: header(),
+      ),
+      body: Column(
+        children: [
+          content(),
+        ],
+      ),
+    );
   }
 }

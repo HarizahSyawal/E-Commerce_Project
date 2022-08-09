@@ -1,9 +1,11 @@
-import 'package:ecommerce_application/pages/home/cart_page.dart';
+import 'package:ecommerce_application/pages/checkout_page.dart';
+import 'package:ecommerce_application/pages/checkout_success_page.dart';
 import 'package:ecommerce_application/pages/detail_chat_page.dart';
 import 'package:ecommerce_application/pages/home/edit_profile_page.dart';
 import 'package:ecommerce_application/pages/home/main_page.dart';
 import 'package:ecommerce_application/pages/product_pages.dart';
 
+import 'pages/home/cart_page.dart';
 import 'pages/home/chat_page.dart';
 import 'pages/home/home_page.dart';
 import 'pages/home/profile_page.dart';
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         '/cart': (context) => CartPage(),
         '/edit-profile': (context) => EditProfilePage(),
         '/product': ((context) => ProductPage()),
+        '/checkout': ((context) => CheckoutPage()),
+        '/checkout-success': ((context) => CheckoutSuccessPage()),
       },
     );
   }
