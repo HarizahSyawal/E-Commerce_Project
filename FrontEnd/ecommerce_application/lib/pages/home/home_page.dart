@@ -1,13 +1,19 @@
+import 'package:ecommerce_application/models/user_model.dart';
 import 'package:ecommerce_application/pages/widgets/product_tile.dart';
+import 'package:ecommerce_application/providers/auth_provider.dart';
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/product_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -22,7 +28,7 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hello, Harizah Syawal',
+                    'Hello, ${user.name}',
                     style: primaryTextStyle.copyWith(
                       fontSize: 24,
                       fontWeight: semiBold,
@@ -32,7 +38,7 @@ class HomePage extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    '@alexid',
+                    '@${user.username}',
                     style: subtitleTextStyle.copyWith(
                       fontSize: 16,
                     ),
@@ -46,15 +52,21 @@ class HomePage extends StatelessWidget {
                 GestureDetector(
                   onTap: () => {},
                   child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/profile');
-                    },
-                    child: Image.asset(
-                      'assets/icon_profile_navbar.png',
-                      width: 54,
-                      height: 54,
-                    ),
-                  ),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/profile');
+                      },
+                      child: Container(
+                        width: 54,
+                        height: 54,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: NetworkImage(
+                              '${user.profilePhotoUrl}',
+                            ),
+                          ),
+                        ),
+                      )),
                 ),
               ],
             ),

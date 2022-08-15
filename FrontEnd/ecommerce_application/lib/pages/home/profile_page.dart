@@ -1,10 +1,17 @@
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import '../../models/user_model.dart';
+import '../../providers/auth_provider.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
     Widget header() {
       return AppBar(
         backgroundColor: backgroundColor1,
@@ -18,9 +25,17 @@ class ProfilePage extends StatelessWidget {
           child: Row(
             children: [
               ClipOval(
-                child: Image.asset(
-                  'assets/icon_profile_navbar.png',
+                child: Container(
                   width: 64,
+                  height: 64,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        '${user.profilePhotoUrl}',
+                      ),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
@@ -31,14 +46,14 @@ class ProfilePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Hello, Harizah Syawal',
+                      'Hello, ${user.name}',
                       style: primaryTextStyle.copyWith(
                         fontWeight: semiBold,
                         fontSize: 24,
                       ),
                     ),
                     Text(
-                      '@hariza.id',
+                      '@${user.username}',
                       style: subtitleTextStyle.copyWith(
                         fontSize: 16,
                       ),

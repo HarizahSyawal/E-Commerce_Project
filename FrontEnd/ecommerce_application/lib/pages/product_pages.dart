@@ -251,7 +251,8 @@ class _ProductPageState extends State<ProductPage> {
                         isWishlist = !isWishlist;
                       });
                       if (isWishlist) {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
                           backgroundColor: secondaryColor,
                           content: Text(
                             'Has been added to the Whitelist',
@@ -259,7 +260,8 @@ class _ProductPageState extends State<ProductPage> {
                           ),
                         ));
                       } else {
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
                           backgroundColor: alertColor,
                           content: Text(
                             'Has been removed from the Whitelist',
