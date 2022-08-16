@@ -5,6 +5,7 @@ import 'package:ecommerce_application/pages/home/edit_profile_page.dart';
 import 'package:ecommerce_application/pages/home/main_page.dart';
 import 'package:ecommerce_application/pages/product_pages.dart';
 import 'package:ecommerce_application/providers/auth_provider.dart';
+import 'package:ecommerce_application/providers/product_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/home/cart_page.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AuthProvider()),
+        ChangeNotifierProvider(create: (context) => ProductProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -1,6 +1,7 @@
 import 'package:ecommerce_application/models/user_model.dart';
 import 'package:ecommerce_application/pages/widgets/product_tile.dart';
 import 'package:ecommerce_application/providers/auth_provider.dart';
+import 'package:ecommerce_application/providers/product_provider.dart';
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +14,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     AuthProvider authProvider = Provider.of<AuthProvider>(context);
     UserModel user = authProvider.user;
+    ProductProvider productProvider = Provider.of<ProductProvider>(context);
 
     Widget header() {
       return Container(
@@ -49,24 +51,17 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                GestureDetector(
-                  onTap: () => {},
-                  child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/profile');
-                      },
-                      child: Container(
-                        width: 54,
-                        height: 54,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              '${user.profilePhotoUrl}',
-                            ),
-                          ),
-                        ),
-                      )),
+                Container(
+                  width: 54,
+                  height: 54,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage(
+                        '${user.profilePhotoUrl}',
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -234,11 +229,11 @@ class HomePage extends StatelessWidget {
               width: defaultMargin,
             ),
             Row(
-              children: [
-                ProductCard(),
-                ProductCard(),
-                ProductCard(),
-              ],
+              children: productProvider.products
+                  .map(
+                    (product) => ProductCard(product),
+                  )
+                  .toList(),
             )
           ]),
         ),
@@ -268,12 +263,11 @@ class HomePage extends StatelessWidget {
           top: 14,
         ),
         child: Column(
-          children: [
-            ProductTile(),
-            ProductTile(),
-            ProductTile(),
-            ProductTile(),
-          ],
+          children: productProvider.products
+              .map(
+                (product) => ProductTile(product),
+              )
+              .toList(),
         ),
       );
     }

@@ -1,18 +1,18 @@
 class UserModel {
-  int? id;
-  String? name;
-  String? email;
-  String? username;
-  String? profilePhotoUrl;
-  String? token;
+  int id;
+  String name;
+  String email;
+  String username;
+  String profilePhotoUrl;
+  String token;
 
   UserModel({
-    required this.id,
-    required this.name,
-    required this.email,
-    required this.username,
-    required this.profilePhotoUrl,
-    required this.token,
+    this.id,
+    this.name,
+    this.email,
+    this.username,
+    this.profilePhotoUrl,
+    this.token,
   });
 
   UserModel.fromJson(Map<String, dynamic> json) {
