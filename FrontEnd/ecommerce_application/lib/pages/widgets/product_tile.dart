@@ -1,3 +1,4 @@
+import 'package:ecommerce_application/pages/product_pages.dart';
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,10 @@ class ProductTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product');
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProductPage(product)),
+        );
       },
       child: Container(
         margin: EdgeInsets.only(

@@ -3,13 +3,14 @@ import 'package:ecommerce_application/pages/checkout_success_page.dart';
 import 'package:ecommerce_application/pages/detail_chat_page.dart';
 import 'package:ecommerce_application/pages/home/edit_profile_page.dart';
 import 'package:ecommerce_application/pages/home/main_page.dart';
-import 'package:ecommerce_application/pages/product_pages.dart';
 import 'package:ecommerce_application/providers/auth_provider.dart';
+import 'package:ecommerce_application/providers/cart_provider.dart';
 import 'package:ecommerce_application/providers/product_provider.dart';
+import 'package:ecommerce_application/providers/transaction_provider.dart';
+import 'package:ecommerce_application/providers/wishlist_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/home/cart_page.dart';
-import 'pages/home/chat_page.dart';
 import 'pages/home/home_page.dart';
 import 'pages/home/profile_page.dart';
 import 'pages/home/wishlist_page.dart';
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => AuthProvider()),
         ChangeNotifierProvider(create: (context) => ProductProvider()),
+        ChangeNotifierProvider(create: (context) => WishlistProvider()),
+        ChangeNotifierProvider(create: (context) => CartProvider()),
+        ChangeNotifierProvider(create: (context) => TransactionProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -42,7 +46,6 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/cart': (context) => CartPage(),
           '/edit-profile': (context) => EditProfilePage(),
-          '/product': ((context) => ProductPage()),
           '/checkout': ((context) => CheckoutPage()),
           '/checkout-success': ((context) => CheckoutSuccessPage()),
         },

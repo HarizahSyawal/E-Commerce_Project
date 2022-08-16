@@ -2,6 +2,8 @@ import 'package:ecommerce_application/models/product_model.dart';
 import 'package:ecommerce_application/theme.dart';
 import 'package:flutter/material.dart';
 
+import '../product_pages.dart';
+
 class ProductCard extends StatelessWidget {
   final ProductModel product;
   ProductCard(this.product);
@@ -10,7 +12,10 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/product');
+         Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ProductPage(product)),
+        );
       },
       child: Container(
         width: 215,
