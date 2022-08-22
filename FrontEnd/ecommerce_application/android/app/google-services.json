@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "285745103327",
+    "project_id": "ecommerce-pj",
+    "storage_bucket": "ecommerce-pj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285745103327:android:c94afdfe26ea46cf1ac46a",
+        "android_client_info": {
+          "package_name": "com.hariz.ecommerce_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285745103327-tdrsll3ctv8j5vtm6m216hstmepaf85j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4b2Ra5U2PTK81TzM2v4-ngy2YqG2UQ_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285745103327-tdrsll3ctv8j5vtm6m216hstmepaf85j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,9 +5,11 @@ import 'package:ecommerce_application/pages/home/edit_profile_page.dart';
 import 'package:ecommerce_application/pages/home/main_page.dart';
 import 'package:ecommerce_application/providers/auth_provider.dart';
 import 'package:ecommerce_application/providers/cart_provider.dart';
+import 'package:ecommerce_application/providers/page_provider.dart';
 import 'package:ecommerce_application/providers/product_provider.dart';
 import 'package:ecommerce_application/providers/transaction_provider.dart';
 import 'package:ecommerce_application/providers/wishlist_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/home/cart_page.dart';
@@ -19,7 +21,11 @@ import 'pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'pages/splash_page.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -31,6 +37,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => WishlistProvider()),
         ChangeNotifierProvider(create: (context) => CartProvider()),
         ChangeNotifierProvider(create: (context) => TransactionProvider()),
+        ChangeNotifierProvider(create: (context) => PageProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
