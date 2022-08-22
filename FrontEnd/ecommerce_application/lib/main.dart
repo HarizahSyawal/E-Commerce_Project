@@ -1,6 +1,5 @@
 import 'package:ecommerce_application/pages/checkout_page.dart';
 import 'package:ecommerce_application/pages/checkout_success_page.dart';
-import 'package:ecommerce_application/pages/detail_chat_page.dart';
 import 'package:ecommerce_application/pages/home/edit_profile_page.dart';
 import 'package:ecommerce_application/pages/home/main_page.dart';
 import 'package:ecommerce_application/providers/auth_provider.dart';
@@ -49,7 +48,6 @@ class MyApp extends StatelessWidget {
           '/main': (context) => MainPage(),
           '/profile': (context) => ProfilePage(),
           '/wishlist': (context) => WishlistPage(),
-          '/detail-chat': (context) => DetailChatPage(),
           '/home': (context) => HomePage(),
           '/cart': (context) => CartPage(),
           '/edit-profile': (context) => EditProfilePage(),

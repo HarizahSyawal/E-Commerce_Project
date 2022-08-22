@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class GalleryModel {
   int id;
   String url;
